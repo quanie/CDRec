@@ -41,6 +41,8 @@ or each observed entry of a 3x3x3 tensor is recorded in the input file:
   
 # Usage
 Parameters: [number of tensor] {[tensor_1's size] ... [tensor_n's size]} [split] [rank] [coupled_map filename] [optimizer] [stopping condition] {[tensor_1's input path] ... [tensor_n's input path]} [output_key] {[tensor_1's valid path] ... [tensor_n's valid path]}
+
+Below are detail descriptions of each parameter. For an example, please find run_test.sh in a folder named "test".
 	
 	[number of tensor]: number of tensors joint decomposed
 	[tensor's size]: mode1-length_mode2-length_..._modeN-length 
