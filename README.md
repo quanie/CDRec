@@ -64,6 +64,8 @@ Parameters: [number of tensor] {[tensor_1's size] ... [tensor_n's size]} [split]
 	[output_key]: directory to local disk with prefix key of the output directory
 	[tensors' valid path]: paths to validation files in HDFS (optional)
 
+The number of common column parameter, C, can be specified in the function step1_LocalInit(), e.g., val nCommonColumn = 3.
+    
 # Spark deployment mode:
 Local mode
 	
