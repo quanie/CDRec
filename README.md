@@ -8,7 +8,7 @@ Quan Do: https://sites.google.com/site/minhquandd/
 # Reference
 Please reference as: Quan Do, Wei Liu and Fang Chen, Discovering both Explicit and Implicit Similarities for Cross-Domain Recommendation, in Proceedings of the 2017 Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD), 2017
 
-    @inproceedings{Do_LiST17,
+    @inproceedings{Do_CDRec17,
       author = {Do, Quan and Liu, Wei and Chen, Fang},
       title = {Discovering both Explicit and Implicit Similarities for Cross-Domain Recommendation},
       booktitle = {Proceedings of the 2017 Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD)},
@@ -45,17 +45,15 @@ Parameters: [number of tensor] {[tensor_1's size] ... [tensor_n's size]} [split]
                     (e.g., 3D tensor of 1500x500x100 then [tensor's size] is 1500_500_100)
 	[split]: number of distributed parts
 	[rank]: rank of decomposition
-	[coupled_map filename]: in case of more than 1 tensor are joint decomposed, this file must be used.
-		It describes coupled relationship between them. 
+	[coupled_map filename]: this file must describe coupled relationship between inputed datasets. 
 		The format of this file is 
 			[tensor1 index]_[mode index] [tensor2 index]_[mode index]. 
 			(e.g., 1st mode of tensor 1 is coupled with 2nd mode of tensor 2. Suppose the index starts with 0, then the content of this file is 0_0 1_1)
-	[optimizer]: either
-		Closed form solution: CF_[RegParam]_[Gradient method]
+	[optimizer]: must be "CF_[RegParam]_[Gradient method]"
+			[RegParam]: L2 regularizer Coefficient
 			[Gradient method]: 
 				Least square: LS
 				Weighted least square: WLS
-			[RegParam]: regularizer Coefficient (in case L1 or L2 is used)
 	[stoping condition]: three different conditions
 		small difference changes: 0_[min diff], e.g., 0_0.00001
 		max iteration: 1_[max iteration], e.g., 1_100
@@ -68,14 +66,14 @@ Parameters: [number of tensor] {[tensor_1's size] ... [tensor_n's size]} [split]
 Local mode
 	
 	spark-submit \
-		--class "[class name]" \
+		--class "SparkCDRec" \
 		--master local[*] \
 		--driver-memory 8G \
 		[location of jar file] [Parameters]
 Cluster mode
 	
 	spark-submit \
-		--class "[class name]" \
+		--class "SparkCDRec" \
 		--master yarn \
 		--deploy-mode cluster \
 		--driver-memory 20G \
@@ -86,4 +84,4 @@ Cluster mode
 
 # Testing
 The code was compiled with Scala 2.10.4 and extensively tested with Spark version 1.6.0 on Hadoop version 2.7.1.
-For testing purpose, I put the compiled jar file in "compiled jar" folder and wrote two executable scripts: run_CTF.sh and run_TF.sh. Before executing any of them, please make sure HDFS and Hadoop Yarn have been started and sample data files have been located in the corresponding HDFS folder.
+For testing purpose, I put the compiled jar file in "test" folder and wrote a sample executable script: run_test.sh. Before executing any of them, please make sure HDFS and Hadoop Yarn have been started and sample data files have been located in the corresponding HDFS folder.
