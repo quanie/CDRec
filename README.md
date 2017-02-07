@@ -51,17 +51,10 @@ Parameters: [number of tensor] {[tensor_1's size] ... [tensor_n's size]} [split]
 			[tensor1 index]_[mode index] [tensor2 index]_[mode index]. 
 			(e.g., 1st mode of tensor 1 is coupled with 2nd mode of tensor 2. Suppose the index starts with 0, then the content of this file is 0_0 1_1)
 	[optimizer]: either
-		Closed form solution: CF_[Lambda]_[Gradient method]
-		Nonlinear Conjugate Gradient: NCG_[Gradient method]
-		Gradient Descent: GD_learning rate_[Gradient method]_[Update method]_[RegParam]
-		Stochastic Gradient Descent: SGD_[learing rate]_[Gradient method]_[Update method]_[RegParam]
+		Closed form solution: CF_[RegParam]_[Gradient method]
 			[Gradient method]: 
 				Least square: LS
 				Weighted least square: WLS
-			[Update method]:
-				Simple: simple
-				L1 regularization: L1
-				L2 regularization: L2
 			[RegParam]: regularizer Coefficient (in case L1 or L2 is used)
 	[stoping condition]: three different conditions
 		small difference changes: 0_[min diff], e.g., 0_0.00001
