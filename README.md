@@ -3,6 +3,7 @@ CDRec is the first Cross Domain Recommender, based on Coupled Matrix Factorizati
 
 # Authors
 Quan Do: https://sites.google.com/site/minhquandd/
+
 Wei Liu: https://sites.google.com/site/weiliusite/
 * Feel free to contact the authors for any question or suggestion.
 
