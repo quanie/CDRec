@@ -87,5 +87,5 @@ Cluster mode
 		[location of jar file] [Parameters]
 
 # Testing
-The code was compiled with Scala 2.10.4 and extensively tested with Spark version 1.6.0 on Hadoop version 2.7.1.
-For testing purpose, I put the compiled jar file in "test" folder and wrote a sample executable script: run_test.sh. Before executing any of them, please make sure HDFS and Hadoop Yarn have been started and sample data files have been located in the corresponding HDFS folder.
+The code was compiled with Scala 2.10.4 and extensively tested with Apache Spark version 1.6.0 on Apache Hadoop version 2.7.1.
+For testing purpose, I put the compiled jar file in "test" folder and wrote a sample executable script (run_test.sh). Before executing it, please make sure HDFS and Hadoop Yarn have been started and sample data files have been located in the corresponding HDFS folder.
