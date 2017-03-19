@@ -2,7 +2,7 @@
 CDRec is the first Cross Domain Recommender, based on Coupled Matrix Factorization algorithm, utilizing both explicit and implicit similarities between datasets across sources for recommendation performance improvement.
 
 # Authors
-Quan Do: https://sites.google.com/site/minhquandd/
+Quan Do: http://quando.space
 
 Wei Liu: https://sites.google.com/site/weiliusite/
 * Feel free to contact the authors for any question or suggestion.
